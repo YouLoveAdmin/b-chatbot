@@ -1,1 +1,1 @@
-Chat Bot for Internal Testing.
+A chat bot for internal testing.
