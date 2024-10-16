@@ -198,6 +198,8 @@
       let user = clientApplication.getAccount();
       if (user) {
         document.getElementById("userName").innerHTML = "Currently logged in as " + user.name;
+        //hide the login button
+        document.getElementById("login").style.display = "none";
       } else {
         document.getElementById("userName").innerHTML = "Not logged in.";
         onSignInClick();  // Automatically trigger login if user is not logged in
