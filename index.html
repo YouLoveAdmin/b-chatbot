@@ -88,6 +88,18 @@
       width: 100%;
       position: fixed;
     }
+
+    /* New CSS for the login button */
+    #login {
+      height: 50px;
+      width: 200px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: aliceblue;
+      font-size: 18px;
+    }
   </style>
 </head>
 <body>
@@ -95,10 +107,10 @@
     <div id="heading">
       <div><span>SSO Test Bot</span></div>
     </div>
-    <div style="z-index: 100;position: absolute;margin-top: 2px;width: 100%;">
+    <div style="z-index: 100;position: absolute;margin-top: 2px;width: 100%;text-align: center;">
       <div>
         <label id="userName" name="userName" style="width:75%;height:15px;border-color: Transparent;">Not logged in.</label>
-        <button id="login" name="login" onclick="onSignInClick()" style="float: right;background-color: aliceblue;">Log In</button>
+        <button id="login" name="login" onclick="onSignInClick()">Log In</button>
       </div>
     </div>
     <div id="webchat"></div>
@@ -127,6 +139,7 @@
       let user = clientApplication.getAccount();
       if (user) {
         document.getElementById("userName").innerHTML = "Currently logged in as " + user.name;
+        document.getElementById("login").style.display = "none"; // Hide the login button
       } else {
         document.getElementById("userName").innerHTML = "Not logged in.";
       }
@@ -287,7 +300,7 @@
       }
 
       return await res.json();
-    } 
+    }
   </script>
 </body>
 </html>
